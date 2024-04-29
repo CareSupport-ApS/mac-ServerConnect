@@ -28,7 +28,6 @@
 		DB83B5E02B5A736300C66495 /* MounterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB83B5DF2B5A736300C66495 /* MounterError.swift */; };
 		DB8D42DA27A061FA0002E178 /* Datetime+BootTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D42D927A061FA0002E178 /* Datetime+BootTime.swift */; };
 		DB8D42DC27A0633D0002E178 /* TimeInterval+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D42DB27A0633D0002E178 /* TimeInterval+Time.swift */; };
-		DB9013032BDFA43C00769648 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DB9013022BDFA43C00769648 /* KeychainSwift */; };
 		DB9013052BDFB43500769648 /* PasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9013042BDFB43500769648 /* PasswordManager.swift */; };
 		DBECF2012BC6FC3700315A76 /* Awesome in Frameworks */ = {isa = PBXBuildFile; productRef = DBECF2002BC6FC3700315A76 /* Awesome */; };
 		DBF592E12BC18D2000B1154F /* NSImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF592E02BC18D2000B1154F /* NSImageView+Extension.swift */; };
@@ -68,7 +67,6 @@
 			files = (
 				DBECF2012BC6FC3700315A76 /* Awesome in Frameworks */,
 				DB66AB282765742C00DBD87B /* LaunchAtLogin in Frameworks */,
-				DB9013032BDFA43C00769648 /* KeychainSwift in Frameworks */,
 				DB5032DA2B59E33B00819D94 /* PerfectLDAP in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,7 +181,6 @@
 				DB66AB272765742C00DBD87B /* LaunchAtLogin */,
 				DB5032D92B59E33B00819D94 /* PerfectLDAP */,
 				DBECF2002BC6FC3700315A76 /* Awesome */,
-				DB9013022BDFA43C00769648 /* KeychainSwift */,
 			);
 			productName = ServerConnect;
 			productReference = DB48B50C2765396100B2DA80 /* ServerConnect.app */;
@@ -217,7 +214,6 @@
 				DB66AB262765742C00DBD87B /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 				DB5032D82B59E33B00819D94 /* XCRemoteSwiftPackageReference "Perfect-LDAP" */,
 				DBECF1FF2BC6FC3700315A76 /* XCRemoteSwiftPackageReference "Awesome" */,
-				DB9013012BDFA43B00769648 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = DB48B50D2765396100B2DA80 /* Products */;
 			projectDirPath = "";
@@ -424,7 +420,7 @@
 				CODE_SIGN_ENTITLEMENTS = ServerConnect/ServerConnect.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 8XW2A3LKCS;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -441,7 +437,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 3.5;
+				MARKETING_VERSION = 3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.caresupport.ServerConnect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -457,7 +453,7 @@
 				CODE_SIGN_ENTITLEMENTS = ServerConnect/ServerConnect.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 8XW2A3LKCS;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -474,7 +470,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 3.5;
+				MARKETING_VERSION = 3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.caresupport.ServerConnect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -522,14 +518,6 @@
 				minimumVersion = 4.0.0;
 			};
 		};
-		DB9013012BDFA43B00769648 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 24.0.0;
-			};
-		};
 		DBECF1FF2BC6FC3700315A76 /* XCRemoteSwiftPackageReference "Awesome" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/LiveUI/Awesome";
@@ -550,11 +538,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DB66AB262765742C00DBD87B /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
 			productName = LaunchAtLogin;
-		};
-		DB9013022BDFA43C00769648 /* KeychainSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DB9013012BDFA43B00769648 /* XCRemoteSwiftPackageReference "keychain-swift" */;
-			productName = KeychainSwift;
 		};
 		DBECF2002BC6FC3700315A76 /* Awesome */ = {
 			isa = XCSwiftPackageProductDependency;

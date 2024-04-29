@@ -8,8 +8,14 @@
 import Cocoa
 import LaunchAtLogin
 
+protocol PopoverCloseDelegate: AnyObject {
+    func closePopover(sender: Any?)
+}
+
 @main
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, PopoverCloseDelegate {
+
+    
 
     let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
     let popover = NSPopover()
@@ -35,7 +41,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.image = NSImage(named: "MenubarIcon")
             button.action = #selector(AppDelegate.togglePopover(_:))
         }
-        self.popover.contentViewController = ViewController.newInstance()
+        let vc = ViewController.newInstance()
+        vc.popoverCloseDelegate = self
+        
+        self.popover.contentViewController = vc
         self.popover.behavior = .transient
         self.popover.animates = false
         LaunchAtLogin.isEnabled = true

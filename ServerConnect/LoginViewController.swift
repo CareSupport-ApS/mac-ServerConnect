@@ -8,7 +8,6 @@
 import Cocoa
 import PerfectLDAP
 import NetFS
-import KeychainSwift
 
 
 struct LoginError: Error {
@@ -58,11 +57,11 @@ class LoginViewController: NSViewController {
         }
         
         
-        if let email = receivedServer.username, NSEvent.modifierFlags.contains(.shift) == false {
+        if let email = receivedServer.username {
             emailTextField.stringValue = email
-            
+                        
             do  {
-                if let password = try KeychainSwift().get(receivedServer.getUrl().absoluteString)  {
+                if let password = try KeychainManager().retrievePassword(forShare: receivedServer.getUrl(), withUsername: email) {
                     passwordTextField.stringValue = password
                     let shiftHeld = NSEvent.modifierFlags.contains(.shift)
                       if !shiftHeld {
@@ -91,7 +90,7 @@ class LoginViewController: NSViewController {
         
         do {
             if (rememberToggle.state == .on) {
-                try KeychainSwift().set(passwordTextField.stringValue, forKey: receivedServer.getUrl().absoluteString, withAccess: .accessibleWhenUnlocked)
+                try KeychainManager().saveCredential(forShare: receivedServer.getUrl(), withUsername: emailTextField.stringValue, andPassword: passwordTextField.stringValue)
             } else {
 //                try PasswordManager().removeCredential(forShare: serverURL(server: receivedServer), withUsername: receivedServer.username ?? "")
             }
@@ -233,26 +232,24 @@ class LoginViewController: NSViewController {
     }
     
     private func openServer(server: Server, path: Path, username: String, password: String) async -> Bool {
-           var urlString = ""
-           
-           switch server.method {
-           case .afp:
-               urlString.append("afp://")
-           case .smb:
-               urlString.append("smb://")
-           case .web:
-               urlString.append("smb://")
-           }
-           
-           urlString.append(server.address)
-            urlString.append("/" + path.path)
-            guard let encodedURLString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
-                showErrorDialog(error: ShareMountError.InvalidURL(input: urlString))
-            return false
+        var urlComponents = URLComponents()
+                
+        switch server.method {
+        case .afp:
+            urlComponents.scheme = "afp"
+        case .smb, .web:
+            urlComponents.scheme = "smb"
         }
+
+        urlComponents.host = server.address
         
+        let decodedPath = path.path.removingPercentEncoding ?? path.path
+
+        urlComponents.path = "/" + decodedPath
+
+      
            do {
-               let share = try Share(urlString)
+               let share = try Share(urlComponents)
               share.username = username
                share.password = password
                

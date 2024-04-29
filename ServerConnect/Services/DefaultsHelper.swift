@@ -23,6 +23,10 @@ struct DefaultsHelper {
        
      
     }
+
+    static func keyChainService() -> String {
+        return "ServerConnect"
+    }
         
     static func companyName() -> String {
         return UserDefaults.standard.string(forKey: "companyName") ?? "CareSupport ApS"

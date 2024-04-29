@@ -84,17 +84,15 @@ class Share {
     fileprivate var asyncRequestId: AsyncRequestID?
     public var delegate: ShareDelegate?
     
-    init(_ url: URL) {
-        self.url = url
-    }
+    init(_ url: URLComponents) throws {
+        guard let url = url.url else {
     
-    init(_ urlString: String) throws {
-        guard let url = URL(string: urlString) else {
-            throw ShareMountError.InvalidURL(input: urlString)
+            throw ShareMountError.InvalidURL(input: url.string ?? "")
         }
-        
+        print(url.absoluteString)
         self.url = url
     }
+
     
     public func cancelMounting() {
         NetFSMountURLCancel(self.asyncRequestId)

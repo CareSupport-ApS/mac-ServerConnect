@@ -47,6 +47,8 @@ class ViewController: NSViewController, NSCollectionViewDelegate, NSCollectionVi
     @IBOutlet weak var collectionView: NSCollectionView!
     @IBOutlet weak var subtitleLabel: NSTextField!
     
+    weak var popoverCloseDelegate: PopoverCloseDelegate?
+    
     @IBAction func helpButtonPressed(_ sender: Any) {
         if let helpUrl = DefaultsHelper.helpURL(), let url =  URL(string: helpUrl) {
             NSWorkspace.shared.open(url)
@@ -126,7 +128,6 @@ class ViewController: NSViewController, NSCollectionViewDelegate, NSCollectionVi
     
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
         guard let first = indexPaths.first else { return }
-           
             collectionView.selectionIndexPaths = []
     }
     
@@ -147,6 +148,17 @@ class ViewController: NSViewController, NSCollectionViewDelegate, NSCollectionVi
         
         // If all items are mounted, allow dragging.
         return true
+    }
+
+    
+    func collectionView(_ collectionView: NSCollectionView, draggingSession session: NSDraggingSession, endedAt screenPoint: NSPoint, dragOperation operation: NSDragOperation) {
+        let windowPoint = collectionView.window?.convertPoint(fromScreen: screenPoint)
+           let inside = collectionView.bounds.contains(windowPoint ?? NSPoint.zero)
+           
+           if !inside {
+               // Dragging session ended outside the controller
+               popoverCloseDelegate?.closePopover(sender: nil)
+           }
     }
 
     func numberOfRows(in tableView: NSTableView) -> Int {
