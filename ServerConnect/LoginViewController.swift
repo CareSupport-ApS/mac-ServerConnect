@@ -252,10 +252,13 @@ class LoginViewController: NSViewController {
                let share = try Share(urlComponents)
               share.username = username
                share.password = password
+               if let mountPath = server.mountPoint {
+                   share.mountPoint = mountPath
+               }
                
                let result = try await share.mount(options: [.AllowLoopback, .AllowSubMounts, .NoAuthDialog])
                if let nResult = result {
-                   path.showInFinder()
+                   path.showInFinder(server: server)
                }
                return true
            } catch {

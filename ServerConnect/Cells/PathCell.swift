@@ -42,12 +42,12 @@ class PathCell: NSCollectionViewItem {
     }
     
     
-    func configureCell(path: Path) {
+    func configureCell(server: Server, path: Path) {
         primaryLabel.stringValue = path.name
         secondaryLabel.stringValue = path.description ?? "Ingen beskrivelse"
         secondaryLabel.toolTip = path.description ?? "Ingen beskrivelse"
         
-        if path.isMounted() {
+        if path.isMounted(server: server) {
             statusLabelContainer.isHidden = false;
         } else {
             statusLabelContainer.isHidden = true

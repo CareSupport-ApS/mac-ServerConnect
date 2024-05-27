@@ -17,6 +17,7 @@ struct Server: Codable {
     
     var method: ConnectionMethod = .smb
     var address: String
+    var mountPoint: String?
     var name: String
     var username: String?
     var paths: [Path]

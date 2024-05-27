@@ -19,9 +19,10 @@ class ViewController: NSViewController, NSCollectionViewDelegate, NSCollectionVi
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+        let server = servers[indexPath.section]
         let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "PathCell"), for: indexPath) as! PathCell
         item.delegate = self
-        item.configureCell(path: servers[indexPath.section].paths[indexPath.item])
+        item.configureCell(server: server, path: server.paths[indexPath.item])
         return item
     }
     
@@ -96,11 +97,12 @@ class ViewController: NSViewController, NSCollectionViewDelegate, NSCollectionVi
     }
     
     func collectionView(_ collectionView: NSCollectionView, pasteboardWriterForItemAt indexPath: IndexPath) -> NSPasteboardWriting? {
-        let item = self.servers[indexPath.section].paths[indexPath.item]
+        let server = self.servers[indexPath.section]
+        let item = server.paths[indexPath.item]
         guard
-              let cell = collectionView.item(at: indexPath) as? PathCell,
-              let mountPath = item.mountPath
+              let cell = collectionView.item(at: indexPath) as? PathCell
         else {return nil}
+        let mountPath = item.localPath(server: server)
             let fileURL = URL(fileURLWithPath: mountPath)
                 
                 let pasteboardItem = NSPasteboardItem()
@@ -137,10 +139,11 @@ class ViewController: NSViewController, NSCollectionViewDelegate, NSCollectionVi
         // Iterate through all indexPaths that are intended to be dragged.
         for indexPath in indexPaths {
             // Fetch the specific item using indexPath.
-            let item = servers[indexPath.section].paths[indexPath.item]
+            let server = servers[indexPath.section]
+            let item = server.paths[indexPath.item]
             
             // Check the mounted state of the item.
-            if !item.isMounted() {
+            if !item.isMounted(server: server) {
                 // If any of the items is not mounted, dragging should not be allowed.
                 return false
             }
@@ -180,8 +183,8 @@ class ViewController: NSViewController, NSCollectionViewDelegate, NSCollectionVi
         let server = servers[indexPath.section]
         let path = server.paths[indexPath.item]
         
-        if path.isMounted() {
-            path.showInFinder()
+        if path.isMounted(server: server) {
+            path.showInFinder(server: server)
             return
         }
         

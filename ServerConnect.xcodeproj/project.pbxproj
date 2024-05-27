@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DB2212C22BC161DF00B9C8E1 /* Path+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2212C12BC161DF00B9C8E1 /* Path+Extensions.swift */; };
 		DB48B5102765396100B2DA80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48B50F2765396100B2DA80 /* AppDelegate.swift */; };
 		DB48B5122765396100B2DA80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB48B5112765396100B2DA80 /* ViewController.swift */; };
 		DB48B5142765396200B2DA80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB48B5132765396200B2DA80 /* Assets.xcassets */; };
@@ -34,7 +33,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DB2212C12BC161DF00B9C8E1 /* Path+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Path+Extensions.swift"; sourceTree = "<group>"; };
 		DB48B50C2765396100B2DA80 /* ServerConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ServerConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB48B50F2765396100B2DA80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB48B5112765396100B2DA80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 				DB66AB2A2765756A00DBD87B /* String+Extension.swift */,
 				DB8D42D927A061FA0002E178 /* Datetime+BootTime.swift */,
 				DB8D42DB27A0633D0002E178 /* TimeInterval+Time.swift */,
-				DB2212C12BC161DF00B9C8E1 /* Path+Extensions.swift */,
 				DBF592E02BC18D2000B1154F /* NSImageView+Extension.swift */,
 			);
 			path = Extension;
@@ -278,7 +275,6 @@
 				DBF592E12BC18D2000B1154F /* NSImageView+Extension.swift in Sources */,
 				DB8D42DA27A061FA0002E178 /* Datetime+BootTime.swift in Sources */,
 				DB5032D72B59DEA300819D94 /* LoginViewController.swift in Sources */,
-				DB2212C22BC161DF00B9C8E1 /* Path+Extensions.swift in Sources */,
 				DB66AB2527656D9C00DBD87B /* HoverableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,7 +416,7 @@
 				CODE_SIGN_ENTITLEMENTS = ServerConnect/ServerConnect.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 8XW2A3LKCS;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -437,7 +433,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 3.6;
+				MARKETING_VERSION = 3.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.caresupport.ServerConnect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -453,7 +449,7 @@
 				CODE_SIGN_ENTITLEMENTS = ServerConnect/ServerConnect.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 8XW2A3LKCS;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -470,7 +466,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 3.6;
+				MARKETING_VERSION = 3.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.caresupport.ServerConnect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

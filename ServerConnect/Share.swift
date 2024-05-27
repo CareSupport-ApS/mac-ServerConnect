@@ -89,7 +89,6 @@ class Share {
     
             throw ShareMountError.InvalidURL(input: url.string ?? "")
         }
-        print(url.absoluteString)
         self.url = url
     }
 
