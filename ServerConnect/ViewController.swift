@@ -33,7 +33,7 @@ class ViewController: NSViewController, NSCollectionViewDelegate, NSCollectionVi
     }
     
     func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> NSSize {
-        return NSSize(width: collectionView.bounds.width, height: 30)
+        return NSSize(width: collectionView.bounds.width, height: servers[section].description != nil ? 40: 30)
     }
     
     
@@ -125,7 +125,9 @@ class ViewController: NSViewController, NSCollectionViewDelegate, NSCollectionVi
     }
         
     func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
-        return NSSize(width: collectionView.bounds.width - 8, height: 70)
+        let path = servers[indexPath.section].paths[indexPath.item]
+        
+        return NSSize(width: collectionView.bounds.width - 8, height: path.description != nil ? 70: 40)
     }
     
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {

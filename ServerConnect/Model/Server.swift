@@ -15,10 +15,31 @@ struct Server: Codable {
         case web
     }
     
+    /*
+     Connection method
+     */
     var method: ConnectionMethod = .smb
+    
+    
+    /*
+     Connection address
+     */
     var address: String
+    
+    /*
+     Where the server is mounted on the local filesystem
+     */
     var mountPoint: String?
+    
+    /*
+     Name of the server, shown to the user
+     */
     var name: String
+    
+    /*
+     Optional description of the server
+     */
+    var description: String?
     var username: String?
     var paths: [Path]
     var ldapUrl: String?
@@ -37,5 +58,7 @@ struct Server: Codable {
         urlString.append(self.address)
         return URL.init(string: urlString)!
     }
+    
+    
     
 }

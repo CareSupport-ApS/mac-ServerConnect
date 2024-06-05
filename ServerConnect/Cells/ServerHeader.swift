@@ -15,6 +15,8 @@ class ServerHeader: NSView {
     
     @IBOutlet weak var sectionLogo: NSTextField!
     
+    @IBOutlet weak var sectionDescription: NSTextField!
+    
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         NSColor(named: NSColor.Name("ServerHeaderBgColor"))!.setFill()
@@ -32,6 +34,14 @@ class ServerHeader: NSView {
         }
         
         sectionTitle.stringValue = server.name
+        
+        if let description = server.description {
+            sectionDescription.stringValue = description
+            sectionDescription.isHidden = false
+        } else {
+            sectionDescription.stringValue = ""
+            sectionDescription.isHidden = true
+        }
     }
     
 }
