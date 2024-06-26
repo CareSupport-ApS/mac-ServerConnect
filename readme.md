@@ -58,9 +58,127 @@ Example `.mobileconfig` file:
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <!-- Configuration settings go here -->
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadIdentifier</key>
+			<string>com.caresupport.ServerConnect.B4329991-6908-4FBD-BC2E-3C063BCCC52F</string>
+			<key>PayloadType</key>
+			<string>com.caresupport.ServerConnect</string>
+			<key>PayloadUUID</key>
+			<string>91FCB468-BC5A-4B91-BC4B-388E478268E5</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>companyName</key>
+			<string>CareSupport ApS</string>
+			<key>helpURL</key>
+			<string>https://kb.caresupport.dk/kunder/caresupport</string>
+			<key>subtitle</key>
+			<string>Only store corporate data the the locations below.</string>
+			<key>logoUrl</key>
+			<string>https://caresupport.dk/wp-content/uploads/2024/02/Screenshot-2022-06-09-at-11.49.07-1.png</string>
+			<key>servers</key>
+			<array>
+				<dict>
+					<key>address</key>
+					<string>server.caresupport.dk</string>
+					<key>method</key>
+					<string>smb</string>
+					<key>name</key>
+					<string>Legacy SMB fileShare</string>
+					<key>paths</key>
+					<array>
+						<dict>
+							<key>description</key>
+							<string>Åbner hele mappen</string>
+							<key>name</key>
+							<string>Hele mappen</string>
+							<key>path</key>
+							<string>01. PROJEKTER - FILM OG TV</string>
+						</dict>
+						<dict>
+							<key>description</key>
+							<string>Til produktioner under udvikling og produktion</string>
+							<key>name</key>
+							<string>UDV OG PROD</string>
+							<key>path</key>
+							<string>01. PROJEKTER - FILM OG TV/01. UDV &amp; PROD</string>
+						</dict>
+						<dict>
+							<key>description</key>
+							<string>Til produktionerne der produceres sammen med andre producenter</string>
+							<key>name</key>
+							<string>CO-PRODUKTIONER</string>
+							<key>path</key>
+							<string>01. PROJEKTER - FILM OG TV/02. CO-PRODUKTIONER (minor)</string>
+						</dict>
+						<dict>
+							<key>description</key>
+							<string>Alle arkiverede produktionsfiler</string>
+							<key>name</key>
+							<string>KATALOG</string>
+							<key>path</key>
+							<string>01. PROJEKTER - FILM OG TV/04. KATALOG</string>
+						</dict>
+					</array>
+					<key>username</key>
+					<string>{{email}}</string>
+				</dict>
+<dict>
+					<key>address</key>
+					<string>https://caresupport.sharepoint.com</string>
+					<key>description</key>
+					<string>SharePoint files - these files can be worked in at the same time</string>
+					<key>method</key>
+					<string>web</string>
+					<key>mountPoint</key>
+					<string>~/Library/CloudStorage/OneDrive-Deltebiblioteker–CareSupport</string>
+					<key>name</key>
+					<string>SharePoint - Departments</string>
+					<key>paths</key>
+					<array>
+						<dict>
+							<key>localPath</key>
+							<string>Local path on computer</string>
+							<key>name</key>
+							<string>Developers</string>
+							<key>path</key>
+							<string>sites/path-1</string>
+						</dict><dict>
+							<key>localPath</key>
+							<string>Local path on computer</string>
+							<key>name</key>
+							<string>Marketing</string>
+							<key>path</key>
+							<string>sites/path32</string>
+						</dict><dict>
+							<key>localPath</key>
+							<string>Produktioner - DK-Prod -</string>
+							<key>name</key>
+							<string>Finance</string>
+							<key>path</key>
+							<string>sites/path-3</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>PayloadDisplayName</key>
+	<string>ServerConnect - Nimbus Film</string>
+	<key>PayloadIdentifier</key>
+	<string>dk.caresupport.7F67D7C2-5FD9-4C75-86FC-270AFF866215</string>
+	<key>PayloadOrganization</key>
+	<string>CareSupport ApS</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>19895FDC-F976-4AE7-A6B9-6840497DF275</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
 </dict>
 </plist>
+
 
 
 
