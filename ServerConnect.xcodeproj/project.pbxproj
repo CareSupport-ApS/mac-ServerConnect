@@ -76,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				DB48B50E2765396100B2DA80 /* ServerConnect */,
+				DB52BA6E2CF4BF460096D1CD /* Frameworks */,
 				DB48B50D2765396100B2DA80 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -137,6 +138,13 @@
 				DB66AB222765697000DBD87B /* ServerHeader.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		DB52BA6E2CF4BF460096D1CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		DB66AB292765756000DBD87B /* Extension */ = {
@@ -211,6 +219,7 @@
 				DB66AB262765742C00DBD87B /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 				DB5032D82B59E33B00819D94 /* XCRemoteSwiftPackageReference "Perfect-LDAP" */,
 				DBECF1FF2BC6FC3700315A76 /* XCRemoteSwiftPackageReference "Awesome" */,
+				DB52BA6F2CF4C0230096D1CD /* XCRemoteSwiftPackageReference "Haversack" */,
 			);
 			productRefGroup = DB48B50D2765396100B2DA80 /* Products */;
 			projectDirPath = "";
@@ -416,8 +425,8 @@
 				CODE_SIGN_ENTITLEMENTS = ServerConnect/ServerConnect.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
-				DEVELOPMENT_TEAM = 8XW2A3LKCS;
+				CURRENT_PROJECT_VERSION = 21;
+				DEVELOPMENT_TEAM = D9K23T5RCG;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ServerConnect/Info.plist;
@@ -433,7 +442,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 3.8;
+				MARKETING_VERSION = 4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.caresupport.ServerConnect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -449,8 +458,8 @@
 				CODE_SIGN_ENTITLEMENTS = ServerConnect/ServerConnect.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
-				DEVELOPMENT_TEAM = 8XW2A3LKCS;
+				CURRENT_PROJECT_VERSION = 21;
+				DEVELOPMENT_TEAM = D9K23T5RCG;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ServerConnect/Info.plist;
@@ -466,7 +475,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 3.8;
+				MARKETING_VERSION = 4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.caresupport.ServerConnect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -504,6 +513,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 3.0.2;
+			};
+		};
+		DB52BA6F2CF4C0230096D1CD /* XCRemoteSwiftPackageReference "Haversack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jamf/Haversack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
 			};
 		};
 		DB66AB262765742C00DBD87B /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {

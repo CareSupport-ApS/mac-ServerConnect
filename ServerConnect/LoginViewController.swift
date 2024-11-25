@@ -61,7 +61,7 @@ class LoginViewController: NSViewController {
             emailTextField.stringValue = email
                         
             do  {
-                if let password = try KeychainManager().retrievePassword(forShare: receivedServer.getUrl(), withUsername: email) {
+                if let password = try KeychainManager.shared.retrievePassword(forShare: receivedServer.getUrl(), withUsername: email) {
                     passwordTextField.stringValue = password
                     let shiftHeld = NSEvent.modifierFlags.contains(.shift)
                       if !shiftHeld {
@@ -90,7 +90,7 @@ class LoginViewController: NSViewController {
         
         do {
             if (rememberToggle.state == .on) {
-                try KeychainManager().saveCredential(forShare: receivedServer.getUrl(), withUsername: emailTextField.stringValue, andPassword: passwordTextField.stringValue)
+                try KeychainManager.shared.saveCredential(forShare: receivedServer.getUrl(), withUsername: emailTextField.stringValue, andPassword: passwordTextField.stringValue)
             } else {
 //                try PasswordManager().removeCredential(forShare: serverURL(server: receivedServer), withUsername: receivedServer.username ?? "")
             }
