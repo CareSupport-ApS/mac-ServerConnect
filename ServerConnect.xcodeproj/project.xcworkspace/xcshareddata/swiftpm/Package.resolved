@@ -1,5 +1,5 @@
 {
-  "originHash" : "c82d94c8c95427689d4e487583a3d90cbfee33002a5477624c9338f11ae61c42",
+  "originHash" : "48dfeb979bb81a9d29fb48f6e1dcd74e9e3ef0940f7da8946acec2eb574bd9d1",
   "pins" : [
     {
       "identity" : "awesome",
@@ -20,48 +20,12 @@
       }
     },
     {
-      "identity" : "launchatlogin",
+      "identity" : "launchatlogin-modern",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/sindresorhus/LaunchAtLogin",
+      "location" : "https://github.com/sindresorhus/LaunchAtLogin-Modern",
       "state" : {
-        "revision" : "e8171b3e38a2816f579f58f3dac1522aa39efe41",
-        "version" : "4.2.0"
-      }
-    },
-    {
-      "identity" : "perfect-iconv",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/PerfectSideRepos/Perfect-ICONV.git",
-      "state" : {
-        "revision" : "9158e26559b7e33eff6b9bd890fd1e80134dd3af",
-        "version" : "3.0.1"
-      }
-    },
-    {
-      "identity" : "perfect-ldap",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/PerfectlySoft/Perfect-LDAP.git",
-      "state" : {
-        "revision" : "e351ef5b9497265f9498555820e408e57f00f950",
-        "version" : "3.0.2"
-      }
-    },
-    {
-      "identity" : "perfect-libsasl",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/PerfectlySoft/Perfect-libSASL.git",
-      "state" : {
-        "revision" : "22dca7e03160de0a307927d7072361d1fd80436d",
-        "version" : "1.0.2"
-      }
-    },
-    {
-      "identity" : "perfect-openldap",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/PerfectlySoft/Perfect-OpenLDAP.git",
-      "state" : {
-        "revision" : "3c0ba5dfecca166180a8f9f637a1b04e540a105b",
-        "version" : "1.0.3"
+        "branch" : "main",
+        "revision" : "a04ec1c363be3627734f6dad757d82f5d4fa8fcc"
       }
     },
     {
@@ -71,6 +35,15 @@
       "state" : {
         "revision" : "671108c96644956dddcd89dd59c203dcdb36cec7",
         "version" : "1.1.4"
+      }
+    },
+    {
+      "identity" : "swiftdirector",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sersoft-gmbh/SwiftDirector",
+      "state" : {
+        "revision" : "941b93b3647d314edd3e9f22e6e137bdd4951093",
+        "version" : "0.0.15"
       }
     }
   ],

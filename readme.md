@@ -182,4 +182,4 @@ Example `.mobileconfig` file:
 
 
 
-productbuild --sign 8XW2A3LKCS --component /Users/emillind/Downloads/3.6/ServerConnect.app /Applications /Users/emillind/Downloads/3.6/ServerConnect.pkg
+productbuild --sign D9K23T5RCG --component /Users/emillind/Downloads/3.6/ServerConnect.app /Applications /Users/emillind/Downloads/3.6/ServerConnect.pkg

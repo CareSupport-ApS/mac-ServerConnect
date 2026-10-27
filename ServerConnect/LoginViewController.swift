@@ -6,8 +6,9 @@
 //
 
 import Cocoa
-import PerfectLDAP
 import NetFS
+import Foundation
+import SwiftDirector
 
 
 struct LoginError: Error {
@@ -102,7 +103,7 @@ class LoginViewController: NSViewController {
         // Perform an LDAP Bind request, if this is asked by the client. Only perform the rest of the login if this LDAP Bind request works.
         if let ldapUrl = receivedServer.ldapUrl {
             let success = await performLdapBind(ldapUrl: ldapUrl)
-            if (!success) {return }
+            if (!success) {return}
         }
         
         let openServerResult = await openServer(server: receivedServer, path: receivedPath, username: emailTextField.stringValue , password: passwordTextField.stringValue)
@@ -114,29 +115,11 @@ class LoginViewController: NSViewController {
     
     private func performLdapBind(ldapUrl: String) async -> Bool {
         do {
-            // first create a connection
-            let connection = try LDAP(url: "ldap://\(ldapUrl)")
-            connection.timeout = 8
-            connection.limitation = 3
-            // setup login info
-            let credential = LDAP.Login(binddn: "uid=\(emailTextField.stringValue)", password: passwordTextField.stringValue)
-            // login in a separated thread
-            let success: Bool = try await withCheckedThrowingContinuation {  continuation in
-                        connection.login(info: credential) { err in
-                                          // Check for cancellation right after the async operation completes
-                                          if Task.isCancelled {
-                                              continuation.resume(throwing: CancellationError())
-                                              return
-                                          }
-                            
-                            if let err = err {
-                                continuation.resume(throwing: LoginError.ldapBindFailed(message: err))
-                            } else {
-                                continuation.resume(returning: true)
-                            }
-                        }
-                    }
-            return success
+            let server = LDAPServer.ldap(host: ldapUrl)
+
+           let connection = try server.openConnection()
+          try connection.bind(dn: .init(stringLiteral: "uid=\(emailTextField.stringValue)"), credentials: passwordTextField.stringValue)
+            return true
         } catch {
             if Task.isCancelled {
                 return false
@@ -155,6 +138,9 @@ class LoginViewController: NSViewController {
         let message: String
         
         switch error {
+        case let ldapError as LDAPError:
+                title = "LDAP Fejl"
+            message = ldapError.description
             case let loginError as LoginError:
                 switch loginError {
                 case .ldapBindFailed(let errorMessage):
@@ -163,7 +149,7 @@ class LoginViewController: NSViewController {
                 }
 
         case let mountError as MounterError:
-            title = "Mounting error"
+            title = "Tilslutningsfejl"
             message = mountError.localizedDescription
         case let shareMountError as ShareMountError:
             title = "Fejl - ShareMountError"

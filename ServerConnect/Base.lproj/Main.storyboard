@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22690"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -676,7 +676,7 @@
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v87-59-TGV">
                                         <rect key="frame" x="74" y="27" width="263" height="16"/>
                                         <subviews>
-                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sTa-28-elH">
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sTa-28-elH">
                                                 <rect key="frame" x="-2" y="16" width="120" height="0.0"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Links til dataopbevaring" id="Bic-Rw-pl8">
                                                     <font key="font" textStyle="footnote" name=".SFNS-Regular"/>
@@ -684,7 +684,7 @@
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="uzD-qD-h0y">
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="uzD-qD-h0y">
                                                 <rect key="frame" x="46" y="0.0" width="199" height="16"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Nimbus Film - dataopbevaring" id="slS-JB-CFz">
@@ -755,6 +755,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FwJ-0E-yYE">
+                                <rect key="frame" x="339" y="8" width="36" height="11"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="version" id="KV1-30-2dd">
+                                    <font key="font" metaFont="miniSystem"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Bud-VQ-e6V" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="1GN-Xp-AWM"/>
@@ -762,6 +770,8 @@
                             <constraint firstAttribute="trailing" secondItem="Bud-VQ-e6V" secondAttribute="trailing" id="Nde-Ff-HQN"/>
                             <constraint firstItem="xk5-RH-ct5" firstAttribute="top" secondItem="Bud-VQ-e6V" secondAttribute="bottom" id="QPW-mB-9xz"/>
                             <constraint firstItem="Bud-VQ-e6V" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="TEY-el-Uca"/>
+                            <constraint firstAttribute="bottom" secondItem="FwJ-0E-yYE" secondAttribute="bottom" constant="8" id="aUF-MF-OEN"/>
+                            <constraint firstAttribute="trailing" secondItem="FwJ-0E-yYE" secondAttribute="trailing" constant="8" id="brp-gO-gS1"/>
                             <constraint firstAttribute="bottom" secondItem="xk5-RH-ct5" secondAttribute="bottom" id="mal-HW-DXi"/>
                             <constraint firstAttribute="trailing" secondItem="xk5-RH-ct5" secondAttribute="trailing" id="zFj-Kn-TO8"/>
                         </constraints>
@@ -771,6 +781,7 @@
                         <outlet property="companyLabel" destination="sTa-28-elH" id="jdz-nv-z3h"/>
                         <outlet property="logoImage" destination="y1S-xj-VF4" id="5T2-uI-xS3"/>
                         <outlet property="subtitleLabel" destination="uzD-qD-h0y" id="XVc-Dr-CX6"/>
+                        <outlet property="versionLabel" destination="FwJ-0E-yYE" id="j9R-ST-VS4"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -785,7 +796,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xqR-An-IBe">
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xqR-An-IBe">
                                 <rect key="frame" x="64" y="169" width="352" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="E-mail" drawsBackground="YES" id="PHi-bm-VEG">
@@ -794,7 +805,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <secureTextField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="32W-wc-rxD">
+                            <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="32W-wc-rxD">
                                 <rect key="frame" x="64" y="132" width="352" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Kodeord" drawsBackground="YES" usesSingleLineMode="YES" id="uxk-jh-VUG">
@@ -806,7 +817,7 @@
                                     </allowedInputSourceLocales>
                                 </secureTextFieldCell>
                             </secureTextField>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aOk-hy-twI">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aOk-hy-twI">
                                 <rect key="frame" x="138" y="222" width="204" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Login med din e-mail og kodeord" id="Dm6-o4-0ne">
@@ -858,7 +869,7 @@ DQ
                                         </imageCell>
                                         <color key="contentTintColor" red="1" green="0.27058823529999998" blue="0.2274509804" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cn9-Av-uDd">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cn9-Av-uDd">
                                         <rect key="frame" x="27" y="0.0" width="142" height="11"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Made with love by CareSupport" id="Pjp-it-EEO">
                                             <font key="font" metaFont="miniSystem"/>
@@ -900,7 +911,7 @@ DQ
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4vd-9O-clh">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4vd-9O-clh">
                                 <rect key="frame" x="64" y="169" width="352" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Navn på genvej" drawsBackground="YES" id="BeA-PY-yeS">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -908,7 +919,7 @@ DQ
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <secureTextField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YN1-PY-RAv">
+                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YN1-PY-RAv">
                                 <rect key="frame" x="64" y="132" width="352" height="21"/>
                                 <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Serversti (træk og slip)" drawsBackground="YES" usesSingleLineMode="YES" id="N8I-tM-Wfp">
                                     <font key="font" metaFont="system"/>
@@ -919,7 +930,7 @@ DQ
                                     </allowedInputSourceLocales>
                                 </secureTextFieldCell>
                             </secureTextField>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kIP-n3-5m5">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kIP-n3-5m5">
                                 <rect key="frame" x="174" y="222" width="133" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Tilføj en servergenvej" id="yAT-vA-vNp">
                                     <font key="font" metaFont="system"/>

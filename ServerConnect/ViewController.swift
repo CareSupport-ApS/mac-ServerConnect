@@ -43,6 +43,7 @@ class ViewController: NSViewController, NSCollectionViewDelegate, NSCollectionVi
     }
     
 
+    @IBOutlet weak var versionLabel: NSTextField!
     @IBOutlet weak var companyLabel: NSTextField!
     @IBOutlet weak var logoImage: NSImageView!
     @IBOutlet weak var collectionView: NSCollectionView!
@@ -90,10 +91,18 @@ class ViewController: NSViewController, NSCollectionViewDelegate, NSCollectionVi
         collectionView.setDraggingSourceOperationMask(.copy, forLocal: false)
 
         logoImage.loadImage(from: DefaultsHelper.logoUrl())
+        
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown"
+        let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "Unknown"
+        versionLabel.stringValue =  "v.\(version) (\(build))"
         companyLabel.stringValue = DefaultsHelper.companyName()
         subtitleLabel.stringValue = DefaultsHelper.subtitle()
            // 2
            view.wantsLayer = true
+        
+        
+      
+
     }
     
     func collectionView(_ collectionView: NSCollectionView, pasteboardWriterForItemAt indexPath: IndexPath) -> NSPasteboardWriting? {
